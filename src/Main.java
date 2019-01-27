@@ -13,15 +13,20 @@ public class Main {
         //sort that array
         // pick a number from the assay and set it as the target to search for
 
-        generateRandomArray(10);
-        int[] array = {1,2,3,4,5,6,7,8,9};
+        ArrayList<Integer> randomList =generateRandomArray(1000000);
+        int[] array = randomList.stream().mapToInt(i -> i).toArray();
+        System.out.println(Arrays.toString(array));
 
-        System.out.println(LinearSearch.searchTime(array, 3));
+        //select a number randomly for searchNumber
+        int searchNumber = getRandom(array);
+        System.out.println(searchNumber);
+
+        System.out.println(LinearSearch.searchTime(array, searchNumber));
 
         //System.out.println(Arrays.toString(BinarySearch.time(array, 3)));
     }
 
-    public static void generateRandomArray(int n){
+    public static ArrayList<Integer> generateRandomArray(int n){
         ArrayList<Integer> list = new ArrayList<Integer>(n);
         Random random = new Random();
 
@@ -29,7 +34,12 @@ public class Main {
         {
             list.add(random.nextInt(n));
         }
-        System.out.println(Arrays.toString(list.toArray()));
-        //return list;
+
+        return list;
+    }
+
+    public static int getRandom(int[] array) {
+        int rnd = new Random().nextInt(array.length);
+        return array[rnd];
     }
 }

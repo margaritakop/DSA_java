@@ -24,7 +24,7 @@ public class LinearSearch {
                     }
                 }
 
-        return 1; //should return something meaningful if searchNumber is not in the array
+        return 404; //should return something meaningful if searchNumber is not in the array
     }
 
 

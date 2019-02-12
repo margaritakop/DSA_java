@@ -1,6 +1,6 @@
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 import java.util.Random;
 
 public class Main {
@@ -8,12 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //array of rndom integers of given lengths
-        //1 - n
-        //sort that array
-        // pick a number from the assay and set it as the target to search for
 
-        ArrayList<Integer> randomList =generateRandomArray(1000000);
+        ArrayList<Integer> randomList =generateRandomArray(100);
         int[] array = randomList.stream().mapToInt(i -> i).toArray();
         System.out.println(Arrays.toString(array));
 
@@ -33,6 +29,7 @@ public class Main {
         for (int i = 0; i < n; i++)
         {
             list.add(random.nextInt(n));
+            Collections.sort(list);
         }
 
         return list;

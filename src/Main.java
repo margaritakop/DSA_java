@@ -18,10 +18,11 @@ public class Main {
         int searchNumber = getRandom(array);
         System.out.println("Searching for: " + searchNumber);
 
-        //search for the target searchnumber in the array
-        long searchTime = LinearSearch.searchTime(array, searchNumber);
-        System.out.println("Time of search was " + searchTime + " ms");
-
+        //Search for the target searchnumber in the array
+        long linearSearchTime = LinearSearch.searchTime(array, searchNumber);
+        System.out.println("Time of Linear search was " + linearSearchTime + " ms");
+        long binarySearchTime = BinarySearch.searchTime(array, searchNumber);
+        System.out.println("Time of Binary search was " + binarySearchTime + " ms");
     }
 
     public static int[] generateRandomArray(int n){

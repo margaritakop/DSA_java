@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         //make a random array of given length
-        int arrayLength = 100;
+        int arrayLength = 10;
         int[] array = generateRandomArray(arrayLength);
         System.out.println("Sorted random array from 1 to " + arrayLength + " :");
         System.out.println(Arrays.toString(array));
@@ -30,7 +30,7 @@ public class Main {
 
         for (int i = 0; i < n; i++)
         {
-            list.add(random.nextInt(n));
+            list.add(random.nextInt(n)+1);
             Collections.sort(list);
         }
 

@@ -7,11 +7,10 @@ public class Main {
 
 
     public static void main(String[] args) {
-
         //make a random array of given length
-        int arrayLength = 10000;
+        int arrayLength = 20000;
+        System.out.println("Generating sorted random array from 1 to " + arrayLength);
         int[] array = generateRandomArray(arrayLength);
-        System.out.println("Sorted random array from 1 to " + arrayLength + " :");
         //System.out.println(Arrays.toString(array));
 
         //select a number randomly for searchNumber

@@ -9,7 +9,8 @@ public class LinearSearch {
         //iterate through the array and check if elements equal the search Number
         for (int num : arraySorted){
             if (num == searchNumber){
-                long timeElapsed = System.currentTimeMillis() - startTime;
+                long endTime = System.currentTimeMillis();
+                long timeElapsed = endTime - startTime;
                 return timeElapsed;
             }
         }

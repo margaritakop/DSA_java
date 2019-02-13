@@ -2,11 +2,24 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.io.FileWriter;
 
 public class Main {
 
 
     public static void main(String[] args) {
+
+        FileWriter writer = new FileWriter("test.csv");
+
+        writer.append("N");
+        writer.append(',');
+        writer.append("name");
+        writer.append(',');
+        writer.append('\n');
+
+        writer.flush();
+        writer.close();
+
         //make a random array of given lengths
         int[] arrayLengths = {10, 100, 10000, 100000, 1000000, 10000000};
         for (int arrayLength : arrayLengths) {

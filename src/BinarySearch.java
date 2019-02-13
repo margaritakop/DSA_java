@@ -10,11 +10,13 @@ public class BinarySearch {
         boolean isSearchNumberFound=false;
         //carry out binary search
         while (isSearchNumberFound == false){
-            int midIndex = arraySorted.length/2;
+            int midIndex = (arraySorted.length-1)/2;
             if (arraySorted[midIndex] == searchNumber){
                 isSearchNumberFound = true;
-            } else if(arraySorted[arraySorted.length/2] > searchNumber){
-                arraySorted = Arrays.copyOfRange(arraySorted, 0, midIndex-1);
+            }else if(arraySorted[midIndex] > searchNumber){
+                arraySorted = Arrays.copyOfRange(arraySorted, 0, midIndex);
+            }else if(arraySorted[midIndex] < searchNumber){
+                arraySorted = Arrays.copyOfRange(arraySorted, midIndex+1, arraySorted.length);
             }
         }
         long timeElapsed = System.currentTimeMillis() - startTime;

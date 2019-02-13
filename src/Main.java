@@ -8,7 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
         //make a random array of given length
-        int arrayLength = 20000;
+        int arrayLength = 10000000;
+        long[] times = searchLinBin(arrayLength);
+        System.out.println(Arrays.toString(times));
+    }
+
+    public static long[] searchLinBin(int arrayLength){
         System.out.println("Generating sorted random array from 1 to " + arrayLength);
         int[] array = generateRandomArray(arrayLength);
         //System.out.println(Arrays.toString(array));
@@ -22,6 +27,9 @@ public class Main {
         System.out.println("Time of Linear search was " + linearSearchTime + " ms");
         long binarySearchTime = BinarySearch.searchTime(array, searchNumber);
         System.out.println("Time of Binary search was " + binarySearchTime + " ms");
+
+        long[] searchTimes = {linearSearchTime, binarySearchTime};
+        return searchTimes;
     }
 
     public static int[] generateRandomArray(int n){
@@ -31,8 +39,9 @@ public class Main {
         for (int i = 0; i < n; i++)
         {
             list.add(random.nextInt(n)+1);
-            Collections.sort(list);
         }
+
+        Collections.sort(list);
 
         int[] array = list.stream().mapToInt(i -> i).toArray();
 

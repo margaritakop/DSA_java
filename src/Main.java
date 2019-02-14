@@ -40,7 +40,7 @@ public class Main {
         //Search for the target searchnumber in the array
         long linearSearchTime = LinearSearch.searchTime(array, searchNumber);
         System.out.println("Time of Linear search was " + linearSearchTime + " ms");
-        long binarySearchTime = BinarySearch.searchTime(array, searchNumber);
+        long binarySearchTime = UtilBinarySearch.searchTime(array, searchNumber);
         System.out.println("Time of Binary search was " + binarySearchTime + " ms");
 
         long[] searchTimes = {linearSearchTime, binarySearchTime};

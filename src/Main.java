@@ -1,9 +1,7 @@
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
 import java.util.Random;
-import java.io.FileWriter;
 
 public class Main {
 
@@ -11,7 +9,9 @@ public class Main {
     public static void main(String[] args) {
 
         //make a random array of given lengths
-        int[] arrayLengths = {10, 100, 10000, 100000, 1000000};
+        int[] arrayLengths = {10, 100, 10000, 100000, 1000000, 5000000, 10000000,
+                15000000, 20000000, 25000000, 30000000, 35000000,
+                40000000, 45000000, 50000000, 55000000, 60000000};
 
         ArrayList<String > results = new ArrayList<String>();
 

@@ -3,9 +3,11 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class CsvWriter {
-    public static void main(String[] args) {
+    public static void write(long[] times) {
 
-        System.out.println("calling CSV writer");
+        String number = Long.toString(times[0]);
+
+        System.out.println("calling CSV writer with" + number);
 
         try (PrintWriter writer = new PrintWriter(new File("results.csv"))) {
 

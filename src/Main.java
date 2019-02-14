@@ -9,23 +9,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FileWriter writer = new FileWriter("test.csv");
-
-        writer.append("N");
-        writer.append(',');
-        writer.append("name");
-        writer.append(',');
-        writer.append('\n');
-
-        writer.flush();
-        writer.close();
-
         //make a random array of given lengths
-        int[] arrayLengths = {10, 100, 10000, 100000, 1000000, 10000000};
+        int[] arrayLengths = {10, 100, 10000, 100000, 1000000};
         for (int arrayLength : arrayLengths) {
             long[] times = searchLinBin(arrayLength);
             System.out.println(Arrays.toString(times));
         }
+
+        CsvWriter obj = new CsvWriter();
+        CsvWriter.main(null);
     }
 
     public static long[] searchLinBin(int arrayLength){

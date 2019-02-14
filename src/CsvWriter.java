@@ -1,26 +1,32 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CsvWriter {
-    public static void write(long[] times) {
-
-        String number = Long.toString(times[0]);
-
-        System.out.println("calling CSV writer with" + number);
+    public static void write(ArrayList<String> results) {
 
         try (PrintWriter writer = new PrintWriter(new File("results.csv"))) {
 
             StringBuilder sb = new StringBuilder();
-            sb.append("id,");
+            sb.append("N");
             sb.append(',');
-            sb.append("Name");
+            sb.append("Linear");
+            sb.append(',');
+            sb.append("Binary");
             sb.append('\n');
 
-            sb.append("1");
-            sb.append(',');
-            sb.append("Prashant Ghimire");
-            sb.append('\n');
+            int x = 1;
+            for (String number: results){
+                sb.append(number);
+                if(x % 3 == 0){
+                    sb.append('\n');
+                }else{
+                sb.append(",");
+                }
+            x = x+1;
+            }
 
             writer.write(sb.toString());
 

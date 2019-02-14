@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
 import java.util.Random;
 import java.io.FileWriter;
@@ -12,13 +13,19 @@ public class Main {
         //make a random array of given lengths
         int[] arrayLengths = {10, 100, 10000, 100000, 1000000};
 
+        ArrayList<String > results = new ArrayList<String>();
 
         for (int arrayLength : arrayLengths) {
+            results.add(Integer.toString(arrayLength));
+
             long[] times = searchLinBin(arrayLength);
             System.out.println(Arrays.toString(times));
+            for (long time: times){
+                results.add(Long.toString(time));
+            }
         }
 
-        CsvWriter.write(searchLinBin(10));
+        CsvWriter.write(results);
     }
 
     public static long[] searchLinBin(int arrayLength){

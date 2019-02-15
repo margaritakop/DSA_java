@@ -7,16 +7,22 @@ public class BinarySearch {
         //set timer
         long startTime = System.currentTimeMillis();
 
+
+        int start = 0;
+        int end = arraySorted.length - 1;
+
         boolean isSearchNumberFound=false;
         //carry out binary search
         while (isSearchNumberFound == false){
-            int midIndex = (arraySorted.length-1)/2;
+            int midIndex = (end-start)/2 + start;
             if (arraySorted[midIndex] == searchNumber){
                 isSearchNumberFound = true;
             }else if(arraySorted[midIndex] > searchNumber){
-                arraySorted = Arrays.copyOfRange(arraySorted, 0, midIndex);
+                end = midIndex-1;
+                //arraySorted = Arrays.copyOfRange(arraySorted, 0, midIndex);
             }else if(arraySorted[midIndex] < searchNumber){
-                arraySorted = Arrays.copyOfRange(arraySorted, midIndex+1, arraySorted.length);
+                start = midIndex+1;
+                //arraySorted = Arrays.copyOfRange(arraySorted, midIndex+1, arraySorted.length);
             }
         }
         long timeElapsed = System.currentTimeMillis() - startTime;

@@ -5,7 +5,7 @@ public class BinarySearch {
         //result returned is the time that it took to fin the searchNumber in the arraySorted.
 
         //set timer
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
 
 
         int start = 0;
@@ -25,7 +25,7 @@ public class BinarySearch {
                 //arraySorted = Arrays.copyOfRange(arraySorted, midIndex+1, arraySorted.length);
             }
         }
-        long timeElapsed = System.currentTimeMillis() - startTime;
+        long timeElapsed = System.nanoTime() - startTime;
         return timeElapsed;
 
         //TODO: handle edge case better when the searchNumber is not found, now it runs 'forever'

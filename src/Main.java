@@ -11,9 +11,9 @@ public class Main {
         //make a random array of given lengths
         int[] arrayLengths = {10,
                 100, 10000, 100000, 1000000, 5000000, 10000000,
-                15000000, 20000000, 25000000, 30000000, 35000000,
-                40000000, 45000000, 50000000, 55000000, 60000000,
-                70000000, 80000000};
+                15000000, 20000000, 30000000,
+                40000000, 50000000, 60000000,
+                70000000};
 
         ArrayList<String > results = new ArrayList<String>();
 
@@ -40,9 +40,9 @@ public class Main {
 
         //Search for the target searchnumber in the array
         long linearSearchTime = LinearSearch.searchTime(array, searchNumber);
-        System.out.println("Time of Linear search was " + linearSearchTime + " ms");
+        System.out.println("Time of Linear search was " + linearSearchTime + " ns");
         long binarySearchTime = BinarySearch.searchTime(array, searchNumber);
-        System.out.println("Time of Binary search was " + binarySearchTime + " ms");
+        System.out.println("Time of Binary search was " + binarySearchTime + " ns");
 
         long[] searchTimes = {linearSearchTime, binarySearchTime};
         return searchTimes;

@@ -5,11 +5,11 @@ public class LinearSearch {
         //result returned is the time that it took to fin the searchNumber in the arraySorted.
 
         //set timer
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         //iterate through the array and check if elements equal the search Number
         for (int num : arraySorted){
             if (num == searchNumber){
-                long endTime = System.currentTimeMillis();
+                long endTime = System.nanoTime();
                 long timeElapsed = endTime - startTime;
                 return timeElapsed;
             }

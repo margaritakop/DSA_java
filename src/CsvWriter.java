@@ -12,9 +12,9 @@ public class CsvWriter {
             StringBuilder sb = new StringBuilder();
             sb.append("N");
             sb.append(',');
-            sb.append("Linear");
+            sb.append("Linear (ns)");
             sb.append(',');
-            sb.append("Binary");
+            sb.append("Binary (ns)");
             sb.append('\n');
 
             int x = 1;
